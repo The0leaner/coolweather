@@ -93,7 +93,7 @@ public class Utility {
     public static Weather handleWeatherResponse(String response) {
         try{
             JSONObject jsonObject = new JSONObject(response);
-            JSONArray jsonArray = jsonObject.getJSONArray("Heweather");
+            JSONArray jsonArray = jsonObject.getJSONArray("HeWeather");
             String weatherContent = jsonArray.getJSONObject(0).toString();
             //先通过object获取整个数据的信息，在从其中获取数组形式的主体内容，再从这个数组中获取每个element（object）
             return new Gson().fromJson(weatherContent , Weather.class);
